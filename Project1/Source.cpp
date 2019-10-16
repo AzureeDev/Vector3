@@ -63,30 +63,22 @@ struct Vector3 {
 
 	Vector3 operator + (const Vector3& secondVector)
 	{
-		Vector3 retVector;
-		retVector.x = this->x + secondVector.x, retVector.y = this->y + secondVector.y, retVector.z = this->z + secondVector.z;
-		return retVector;
+		return Vector3(this->x + secondVector.x, this->y + secondVector.y, this->z + secondVector.z);
 	}
 
 	Vector3 operator - (const Vector3& secondVector)
 	{
-		Vector3 retVector;
-		retVector.x = this->x - secondVector.x, retVector.y = this->y - secondVector.y, retVector.z = this->z - secondVector.z;
-		return retVector;
+		return Vector3(this->x - secondVector.x, this->y - secondVector.y, this->z - secondVector.z);
 	}
 
 	Vector3 operator * (const Vector3& secondVector)
 	{
-		Vector3 retVector;
-		retVector.x = this->x * secondVector.x, retVector.y = this->y * secondVector.y, retVector.z = this->z * secondVector.z;
-		return retVector;
+		return Vector3(this->x * secondVector.x, this->y * secondVector.y, this->z * secondVector.z);
 	}
 
 	Vector3 operator / (const Vector3& secondVector)
 	{
-		Vector3 retVector;
-		retVector.x = this->x / secondVector.x, retVector.y = this->y / secondVector.y, retVector.z = this->z / secondVector.z;
-		return retVector;
+		return Vector3(this->x / secondVector.x, this->y / secondVector.y, this->z / secondVector.z);
 	}
 
 	float x, y, z;
