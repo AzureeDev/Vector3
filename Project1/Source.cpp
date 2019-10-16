@@ -6,7 +6,7 @@ struct Vector3 {
 	};
 
 	template <typename vectorNumber>
-	Vector3(vectorNumber x = 0, vectorNumber y = 0, vectorNumber z = 0)
+	Vector3(const vectorNumber x = 0, const vectorNumber y = 0, const vectorNumber z = 0)
 	{
 		this->x = static_cast<float>(x), this->y = static_cast<float>(y), this->z = static_cast<float>(z);
 	}
@@ -16,6 +16,21 @@ struct Vector3 {
 		this->x = 0, this->y = 0, this->z = 0;
 	}
 
+	float X()
+	{
+		return this->x;
+	}
+
+	float Y()
+	{
+		return this->y;
+	}
+
+	float Z() 
+	{
+		return this->z;
+	}
+
 	friend std::ostream& operator << (std::ostream& os, const Vector3& vec)
 	{
 		os << "Vector3(" << vec.x << ", " << vec.y << ", " << vec.z << ")";
@@ -23,51 +38,51 @@ struct Vector3 {
 	}
 
 	template <typename vectorNumber>
-	void operator + (vectorNumber nb)
+	void operator + (const vectorNumber nb)
 	{
 		this->x += static_cast<float>(nb), this->y += static_cast<float>(nb), this->z += static_cast<float>(nb);
 	}
 
 	template <typename vectorNumber>
-	void operator - (vectorNumber nb)
+	void operator - (const vectorNumber nb)
 	{
 		this->x -= static_cast<float>(nb), this->y -= static_cast<float>(nb), this->z -= static_cast<float>(nb);
 	}
 
 	template <typename vectorNumber>
-	void operator * (vectorNumber nb)
+	void operator * (const vectorNumber nb)
 	{
 		this->x *= static_cast<float>(nb), this->y *= static_cast<float>(nb), this->z *= static_cast<float>(nb);
 	}
 
 	template <typename vectorNumber>
-	void operator / (vectorNumber nb)
+	void operator / (const vectorNumber nb)
 	{
 		this->x /= static_cast<float>(nb), this->y /= static_cast<float>(nb), this->z /= static_cast<float>(nb);
 	}
 
-	Vector3 operator + (Vector3& secondVector)
+	Vector3 operator + (const Vector3& secondVector)
 	{
 		Vector3 retVector;
 		retVector.x = this->x + secondVector.x, retVector.y = this->y + secondVector.y, retVector.z = this->z + secondVector.z;
 		return retVector;
 	}
 
-	Vector3 operator - (Vector3& secondVector)
+	Vector3 operator - (const Vector3& secondVector)
 	{
 		Vector3 retVector;
 		retVector.x = this->x - secondVector.x, retVector.y = this->y - secondVector.y, retVector.z = this->z - secondVector.z;
 		return retVector;
 	}
 
-	Vector3 operator * (Vector3& secondVector)
+	Vector3 operator * (const Vector3& secondVector)
 	{
 		Vector3 retVector;
 		retVector.x = this->x * secondVector.x, retVector.y = this->y * secondVector.y, retVector.z = this->z * secondVector.z;
 		return retVector;
 	}
 
-	Vector3 operator / (Vector3& secondVector)
+	Vector3 operator / (const Vector3& secondVector)
 	{
 		Vector3 retVector;
 		retVector.x = this->x / secondVector.x, retVector.y = this->y / secondVector.y, retVector.z = this->z / secondVector.z;
